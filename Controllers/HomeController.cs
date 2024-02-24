@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MvcMovies.Models;
 using System.Diagnostics;
-
+// Premade controller that came with the project when you start it in this editor
 namespace MvcMovies.Controllers
 {
     public class HomeController : Controller

@@ -10,45 +10,52 @@ using MvcMovies.Data;
 
 namespace MvcMovies.Migrations
 {
+    // Snapshot of the DbContext model at a specific point in time.
     [DbContext(typeof(MvcMoviesContext))]
     partial class MvcMoviesContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
+            // Configuring the DbContext model
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
+            // Configuring identity columns for SQL Server
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            // Configuring the Movie entity
             modelBuilder.Entity("MvcMovie.Models.Movie", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+            {
+                // Configuring properties of the Movie entity
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Genre")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("Genre")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18, 2)");
+                b.Property<decimal>("Price")
+                    .HasColumnType("decimal(18, 2)");
 
-                    b.Property<string>("Rating")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("Rating")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("datetime2");
+                b.Property<DateTime>("ReleaseDate")
+                    .HasColumnType("datetime2");
 
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("Title")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                // Configuring primary key for the Movie entity
+                b.HasKey("Id");
 
-                    b.ToTable("Movie");
-                });
+                // Mapping the Movie entity to the "Movie" table
+                b.ToTable("Movie");
+            });
 #pragma warning restore 612, 618
         }
     }

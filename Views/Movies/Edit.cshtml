@@ -1,6 +1,7 @@
 ﻿@model MvcMovie.Models.Movie
 
 @{
+    // Setting the title of the page
     ViewData["Title"] = "Edit";
 }
 
@@ -10,30 +11,38 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <!-- Form for editing a movie -->
         <form asp-action="Edit">
+            <!-- Validation summary for model errors -->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- Hidden input field for movie ID -->
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
+                <!-- Label and input for movie title -->
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <!-- Label and input for movie release date -->
                 <label asp-for="ReleaseDate" class="control-label"></label>
                 <input asp-for="ReleaseDate" class="form-control" />
                 <span asp-validation-for="ReleaseDate" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <!-- Label and input for movie genre -->
                 <label asp-for="Genre" class="control-label"></label>
                 <input asp-for="Genre" class="form-control" />
                 <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <!-- Label and input for movie price -->
                 <label asp-for="Price" class="control-label"></label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <!-- Submit button for saving the changes -->
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -41,9 +50,13 @@
 </div>
 
 <div>
+    <!-- Link to navigate back to the movie list -->
     <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <!-- Including validation scripts -->
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

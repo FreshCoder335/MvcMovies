@@ -1,6 +1,7 @@
 ﻿@model MvcMovie.Models.Movie
 
 @{
+    // Setting the title of the page
     ViewData["Title"] = "Delete";
 }
 
@@ -10,36 +11,40 @@
 <div>
     <h4>Movie</h4>
     <hr />
+    <!-- Displaying movie details in a definition list -->
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Title)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ReleaseDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ReleaseDate)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Genre)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Genre)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Price)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Price)
         </dd>
     </dl>
-    
+
+    <!-- Form for deleting the movie -->
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
+        <!-- Submit button for deleting the movie -->
         <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <!-- Link to navigate back to the movie list -->
         <a asp-action="Index">Back to List</a>
     </form>
 </div>
