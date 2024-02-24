@@ -8,8 +8,6 @@ The purpose for creating this software is that of learning how data is handled t
 to learn also how to create a web application that can ping a database hosted on my local host computer. In the real world the database would be hosted elsewhere
 but this was simply for me to get an understanding of such things
 
-{Provide a link to your YouTube demonstration.  It should be a one minute demo of the software running and a walkthrough of the code.}
-
 [ASP.NET Project](https://youtu.be/TgwajFiwr0o)
 
 # Development Environment
